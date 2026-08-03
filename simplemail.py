@@ -6,12 +6,14 @@ Step 2:using SMTPLIB we start the communication
 '''
 import smtplib
 #first we will make the protocol connection
+From=input("Enter mail Address:")
+pas=input("Enter 12 letter password")
 server = smtplib.SMTP('smtp.gmail.com',587)
 print(server)
 #Start Communication
 server.starttls()
 #we will make the login
-server.login("kasarlasaikiran002@gmail.com","sxlk uqbw yvgm zcqe")
+server.login(From,pas)
 print("Login Success")
 messsage="Hello,This is an Automated Mail"
 #send the mail
