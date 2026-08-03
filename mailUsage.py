@@ -5,8 +5,11 @@ import email
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 #give from adress,to adress and subject
-From='kasarlasaikiran002@gmail.com'
-To="22311a05n3@cse.sreenidhi.edu.in"
+From=input("Enter mail Address:")
+#From='kasarlasaikiran002@gmail.com'
+To=input('Enter To Email address:')
+pas=input("Enter 12 letter password")
+#To="22311a05n3@cse.sreenidhi.edu.in"
 Subject="Email Automation"
 msg=MIMEMultipart()
 msg['From']=From
@@ -18,7 +21,7 @@ text=msg.as_string()
 #same as previous SMTP Usage we will follow
 server =smtplib.SMTP('smtp.gmail.com',587)
 server.starttls()
-server.login("kasarlasaikiran002@gmail.com","sxlk uqbw yvgm zcqe")
+server.login(From,pas)
 server.sendmail(From,To,text)
 print("Success")
 server.quit()
